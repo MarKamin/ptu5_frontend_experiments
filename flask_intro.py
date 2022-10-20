@@ -1,5 +1,5 @@
-from flask import Flask, render_template
-
+from flask import Flask, render_template, request
+#n
 app = Flask(__name__)
 
 @app.route("/")
@@ -12,16 +12,26 @@ def user(name):
 
 @app.route("/grazi_diena")
 def grazi_diena():
-    return render_template("grazi_diena.html")
+    return render_template('grazi_diena.html')
 
 @app.route("/zmones")
-def zmones():
-    zmones = [
-        'Justina', 'Darius', 'Ingrida', 'Linas', 
-        'Ana', 'Simas', 'Arnoldas', 'Sergejus',
+def labas():
+    zmones = ["Marius", "Justina", "Linas", "Ana", 
+    "Simas", "Vladislavas", "Krusciovas"
     ]
     return render_template("zmones.html", zmones=zmones)
+
+@app.route("/login")
+def login():
+    return render_template("login.html") 
+
+@app.route("/hello")
+def hello():
+    return render_template("hello.html", **request.args)
+
 
 
 if __name__ == "__main__":
     app.run(debug=True)
+
+

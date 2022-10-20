@@ -1,13 +1,19 @@
 <!DOCTYPE html>
-<html lang="lt">
+<html>
     <head>
         <meta charset="UTF-8">
-        <title>Žmonės</title>
+        <title>Zmones</title>
     </head>
     <body>
-        <h1>Žmonės</h1>
-        <h3>Gerų studentų sąrašas</h3>
-        <hr>
-        <p>{{ zmones }}</p>
+        <h1>
+            <h1>Zmones</h1>
+            <h3>Geru studentu sarasas</h3>
+            <hr>
+            <ol>
+            {% for zmogus in zmones%}
+                <li>{{ zmogus }}</li>
+            {% endfor %}
+            </ol>
+        </h1>
     </body>
 </html>
